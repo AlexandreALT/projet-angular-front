@@ -1,0 +1,31 @@
+<mat-sidenav-container>
+  <mat-sidenav
+    style="width: 15%; background-color: #ece8e1"
+    #sidenav
+    [opened]="true"
+    [mode]="'side'"
+  >
+    <mat-nav-list>
+      <a
+        mat-list-item
+        [routerLink]="'/characters/' + api.id"
+        routerLinkActive="active-list-item"
+        *ngFor="let api of characters$ | async"
+      >
+        {{ api.name }}
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content style="background-color: #111">
+    <div
+      style="
+        height: 83vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
