@@ -14,6 +14,25 @@
       >
         {{ api.name }}
       </a>
+      <a
+        mat-list-item
+        [routerLink]="'/add-character'"
+        routerLinkActive="active-list-item"
+        >+ Ajouter un personnage</a
+      >
+      <hr />
+      <a
+        mat-list-item
+        [routerLink]="'/skills'"
+        routerLinkActive="active-list-item"
+        >Compétences</a
+      >
+      <a
+        mat-list-item
+        [routerLink]="'/add-skill'"
+        routerLinkActive="active-list-item"
+        >+ Ajouter une compétence</a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content style="background-color: #111">

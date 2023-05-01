@@ -1,0 +1,48 @@
+<form [formGroup]="characterForm" (ngSubmit)="onSubmit()" class="container">
+  <div>
+    <label for="name">Nom :</label>
+    <input type="text" id="name" name="name" formControlName="name" required />
+  </div>
+
+  <div>
+    <label for="role">Rôle :</label>
+    <select id="role" name="role" formControlName="role" required>
+      <option value="Duelliste">Duelliste</option>
+      <option value="Contrôleur">Contrôleur</option>
+      <option value="Sentinelle">Sentinelle</option>
+      <option value="Initiateur">Initiateur</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Compétence 1 :</label>
+    <select (change)="onSelectSkill1($event)" name="skill1">
+      <option value="">Sélectionner une compétence</option>
+      <option *ngFor="let skill of skills$ | async" [value]="skill.id">
+        {{ skill.name }}
+      </option>
+    </select>
+  </div>
+
+  <div>
+    <label>Compétence 2 :</label>
+    <select (change)="onSelectSkill2($event)" name="skill2">
+      <option value="">Sélectionner une compétence</option>
+      <option *ngFor="let skill of skills$ | async" [value]="skill.id">
+        {{ skill.name }}
+      </option>
+    </select>
+  </div>
+
+  <div>
+    <label>Compétence 3 :</label>
+    <select (change)="onSelectSkill3($event)" name="skill3">
+      <option value="">Sélectionner une compétence</option>
+      <option *ngFor="let skill of skills$ | async" [value]="skill.id">
+        {{ skill.name }}
+      </option>
+    </select>
+  </div>
+
+  <button type="submit">Ajouter</button>
+</form>

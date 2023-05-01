@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from './../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Character } from '../models/character';
 
 @Injectable({
@@ -16,9 +16,25 @@ export class CharacterService {
     );
   }
 
+  create(character: Character): Observable<string> {
+    return this.http.post<string>(
+      environment.iutApiBaseUrl + '/characters',
+      character
+    );
+  }
+
   getById(id: number): Observable<Character> {
     return this.http.get<Character>(
       environment.iutApiBaseUrl + '/characters/' + id
+    );
+  }
+
+  getNextCharacterId(): Observable<number> {
+    return this.get().pipe(
+      map((characters) => {
+        const maxId = Math.max(...characters.map((c) => c.id));
+        return maxId + 1;
+      })
     );
   }
 }

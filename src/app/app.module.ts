@@ -10,15 +10,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, SkillsComponent],
+  declarations: [AppComponent, MenuComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CoreModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,

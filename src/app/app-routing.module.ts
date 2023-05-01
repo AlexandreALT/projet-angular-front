@@ -17,6 +17,20 @@ const routes: Routes = [
     loadChildren: () =>
       import('./skills/skills.module').then((m) => m.SkillsModule),
   },
+  {
+    path: 'add-character',
+    loadChildren: () =>
+      import(
+        './character/components/character-form/character-form.module'
+      ).then((m) => m.CharacterFormModule),
+  },
+  {
+    path: 'add-skill',
+    loadChildren: () =>
+      import('./skills/components/skill-form/skill-form.module').then(
+        (m) => m.SkillFormModule
+      ),
+  },
 ];
 
 @NgModule({

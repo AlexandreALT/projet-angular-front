@@ -5,15 +5,8 @@ import { CharacterRoutingModule } from './character-routing.module';
 import { CharacterComponent } from './character.component';
 import { CharacterDetailsComponent } from './pages/character-details/character-details.component';
 
-
 @NgModule({
-  declarations: [
-    CharacterComponent,
-    CharacterDetailsComponent
-  ],
-  imports: [
-    CommonModule,
-    CharacterRoutingModule
-  ]
+  declarations: [CharacterComponent, CharacterDetailsComponent],
+  imports: [CommonModule, CharacterRoutingModule],
 })
-export class CharacterModule { }
+export class CharacterModule {}
