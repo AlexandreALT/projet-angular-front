@@ -18,6 +18,20 @@ export class SkillsService {
     return this.http.post<string>(environment.iutApiBaseUrl + '/skills', skill);
   }
 
+  delete(id: number): Observable<string> {
+    console.log(id);
+    return this.http.delete<string>(
+      environment.iutApiBaseUrl + '/skills/' + id
+    );
+  }
+
+  update(skill: Skill): Observable<string> {
+    return this.http.put<string>(
+      environment.iutApiBaseUrl + '/skills/' + skill.id,
+      skill
+    );
+  }
+
   getById(id: number): Observable<Skill> {
     return this.http.get<Skill>(environment.iutApiBaseUrl + '/skills/' + id);
   }

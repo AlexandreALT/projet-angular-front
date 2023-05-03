@@ -27,7 +27,7 @@
       <td
         mat-cell
         *matCellDef="let element"
-        (click)="$event.stopPropagation()"
+        (click)="edit(element.id); $event.stopPropagation()"
         class="clickable"
       >
         <mat-icon>edit</mat-icon>
@@ -39,7 +39,7 @@
       <td
         mat-cell
         *matCellDef="let element"
-        (click)="$event.stopPropagation()"
+        (click)="delete(element.id); $event.stopPropagation()"
         class="clickable"
       >
         <mat-icon>delete</mat-icon>

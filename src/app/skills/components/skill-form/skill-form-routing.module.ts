@@ -7,6 +7,10 @@ const routes: Routes = [
     path: '',
     component: SkillFormComponent,
   },
+  {
+    path: ':id',
+    component: SkillFormComponent,
+  },
 ];
 
 @NgModule({

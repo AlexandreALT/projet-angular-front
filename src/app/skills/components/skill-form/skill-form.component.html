@@ -1,18 +1,30 @@
 <form [formGroup]="skillForm" (ngSubmit)="onSubmit()" class="container">
-  <div>
-    <label for="name">Nom :</label>
-    <input type="text" id="name" name="name" formControlName="name" required />
-  </div>
+  <h1>Ajouter une nouvelle compétence</h1>
 
   <div>
-    <label for="name">Description :</label>
+    <label for="name" class="label">Nom :</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      formControlName="name"
+      class="input"
+      required
+    />
+  </div>
+  <br />
+
+  <div>
+    <label for="name" class="label">Description :</label>
     <textarea
       id="description"
       name="description"
       formControlName="description"
+      class="input"
       required
     ></textarea>
   </div>
+  <br />
 
-  <button type="submit">Ajouter</button>
+  <button type="submit" class="submit">Ajouter</button>
 </form>

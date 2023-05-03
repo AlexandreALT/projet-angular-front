@@ -7,6 +7,10 @@ const routes: Routes = [
     path: '',
     component: CharacterFormComponent,
   },
+  {
+    path: ':id',
+    component: CharacterFormComponent,
+  },
 ];
 
 @NgModule({

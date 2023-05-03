@@ -1,5 +1,19 @@
 <div *ngIf="character$ | async as character" class="container">
-  <h1>{{ character.name }}</h1>
+  <div class="flex">
+    <h1>{{ character.name }}</h1>
+    <div class="icons">
+      <mat-icon
+        class="clickable"
+        (click)="edit(character.id); $event.stopPropagation()"
+        >edit</mat-icon
+      >
+      <mat-icon
+        class="clickable"
+        (click)="delete(character.id); $event.stopPropagation()"
+        >delete</mat-icon
+      >
+    </div>
+  </div>
   <h2>Rôle : {{ character.role }}</h2>
   <h2>Compétences :</h2>
   <div *ngFor="let skill of (character$ | async)?.skills" class="skills">

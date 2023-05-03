@@ -23,6 +23,20 @@ export class CharacterService {
     );
   }
 
+  delete(id: number): Observable<string> {
+    console.log(id);
+    return this.http.delete<string>(
+      environment.iutApiBaseUrl + '/characters/' + id
+    );
+  }
+
+  update(character: Character): Observable<string> {
+    return this.http.put<string>(
+      environment.iutApiBaseUrl + '/characters/' + character.id,
+      character
+    );
+  }
+
   getById(id: number): Observable<Character> {
     return this.http.get<Character>(
       environment.iutApiBaseUrl + '/characters/' + id
